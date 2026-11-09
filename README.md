@@ -33,6 +33,30 @@ Possible applications:
 - Comparing options quickly ("rebuild vs. patch") by estimating each one
 - Producing a consistent first number that a team can then discuss and adjust
 
+### [time-log](time-log/SKILL.md)
+
+Turns a working session into a short, numbered list of what was done, ready to paste into a timesheet or invoice. It reads the conversation, the commits on the current branch and the related pull request stack, and logs all of it, including discussions, investigation and unplanned fixes, not just the code. The list is capped at twelve chronological lines, written at the level of "what area was worked on" rather than implementation detail, with no hours and nothing around it. It runs only when invoked (`/time-log`), optionally with a starting date (`/time-log since Monday`) to leave out older commits.
+
+Example:
+
+> /time-log
+
+> 1. Requirements session for the checkout flow — payment options, error states and analytics.
+>
+> 2. Set up the checkout module and its test environment.
+>
+> 3. Built the cart summary, address form and order confirmation.
+>
+> 4. Repaired the build after a shared dependency changed upstream.
+
+Possible applications:
+
+- Filling in a daily or weekly timesheet at the end of a session
+- Writing the line items for a client invoice
+- Recovering what happened on a long-running branch spread over several sessions
+- Producing a status update or standup summary for a manager or client
+- Making unplanned work (upstream breakages, design changes) visible so it gets billed
+
 ## Layout
 
 ```
