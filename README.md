@@ -57,6 +57,33 @@ Possible applications:
 - Producing a status update or standup summary for a manager or client
 - Making unplanned work (upstream breakages, design changes) visible so it gets billed
 
+### [do-stacks](do-stacks/SKILL.md)
+
+Re-cuts a long-lived branch that mixes docs, backend and frontend work into a stack of pull requests, one per layer, each based on the one below. You describe the layers as path regexes; the bundled `scripts/split-stack.sh` replays the branch's commits onto each layer branch, splitting commits that span layers and keeping their author, date and message. Every layer is then tree-checked against the source branch and verified with the repo's own codegen, typecheck, lint and tests before the PRs are opened and linked with `gh stack`. The original branch is never touched. It runs only when invoked (`/do-stacks`).
+
+Example spec:
+
+```
+feature/search-docs|docs|^docs/
+feature/search-api|api|^(schema/|api/)
+feature/search-web|web|^web/
+```
+
+> /do-stacks feature/search onto main
+
+> | PR | Branch | Base | Commits |
+> |---|---|---|---|
+> | #41 | feature/search-docs | main | 2 |
+> | #42 | feature/search-api | feature/search-docs | 5 |
+> | #43 | feature/search-web | feature/search-api | 7 |
+
+Possible applications:
+
+- Turning a branch that got too big into PRs a reviewer can take one at a time
+- Landing decision records and docs before the code that follows them
+- Making sure each layer builds and passes tests on its own, not only the finished branch
+- Keeping trunk history at one clean commit per layer
+
 ## Layout
 
 ```
