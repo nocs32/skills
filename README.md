@@ -12,6 +12,19 @@ A skill is a folder containing a `SKILL.md` file: a short frontmatter block (`na
 
 Turns a short task description into a conservative hour estimate with a brief breakdown. It splits the work into parts, adds the work that usually gets forgotten (testing, deployment, permissions, review fixes), applies a contingency multiplier and rounds up to a fixed scale. It states its assumptions instead of asking questions, unless the request has almost no context.
 
+Example:
+
+> estimate - add "forgot password" with an emailed reset link to an existing login page
+
+> **Estimate: 6h**
+>
+> - Reset token and endpoints - 2h
+> - Reset form and validation - 1h
+> - Email template and sending - 1h
+> - Tests and deploy - 2h
+>
+> Assumes: an email provider is already configured, no rate limiting beyond what exists.
+
 Possible applications:
 
 - Answering "how long will this take?" for a ticket, feature request or bug report
