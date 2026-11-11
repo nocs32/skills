@@ -84,6 +84,30 @@ Possible applications:
 - Making sure each layer builds and passes tests on its own, not only the finished branch
 - Keeping trunk history at one clean commit per layer
 
+### [do-email](do-email/SKILL.md)
+
+Drafts, rewrites and reviews the emails you send to clients, in one fixed house style: written as you, calm and businesslike, short paragraphs, plain words a non-technical client understands, and a single clear ask at the end when one is needed. Output is plain text with no greeting, sign-off or dashes, ready to paste into your email client. It answers the client's points in order, states causes plainly instead of judging their work, treats your own wording as the draft, and checks every claim about what was built against the code or the conversation. A tone table shows typical rewrites.
+
+Example:
+
+> write the client an email that the supplier price import is ready to test
+
+> Subject: Supplier price import ready for testing
+>
+> The supplier price import is completed in the test environment and ready for your review and testing.
+>
+> It updates your product prices from the supplier's file. You can review every change before anything is saved, so an update comes down to uploading the file and checking the list.
+>
+> Once you've tested it, let me know if any adjustments are needed or if it's okay to start the live deployment.
+
+Possible applications:
+
+- Status updates when a feature is ready for the client to review
+- Replies to bug reports and "this doesn't look right" questions
+- Polishing a rough draft you wrote yourself without changing what it says
+- A quick send-or-fix verdict on a draft before it goes out
+- Keeping one consistent voice across every client email
+
 ## Layout
 
 ```
