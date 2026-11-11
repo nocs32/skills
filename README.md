@@ -108,6 +108,24 @@ Possible applications:
 - A quick send-or-fix verdict on a draft before it goes out
 - Keeping one consistent voice across every client email
 
+### [do-figma](do-figma/SKILL.md)
+
+Builds a UI component from a Figma frame, or audits an existing one against it, to the exact pixel. It reads frames through the Figma REST API with the bundled `scripts/figma_fetch.py`, so it doesn't use up the metered Dev Mode MCP quota. It only calls the MCP for variable names it has never seen, and caches them per design file. One read returns the layout tree, every value with its matching local design token, and a search that shows whether the component already exists. After building, `scripts/measure.js` measures the result in the browser and `--diff` lists only the values that still differ from the frame. It stops for your approval before committing. Needs Python 3.9+ and a Figma personal access token in `FIGMA_ALL_ACCESS`; see [do-figma/README.md](do-figma/README.md) for setup.
+
+Example:
+
+> Does our Card component match this frame? https://figma.com/design/abc123/App?node-id=1-2
+
+> The frame specifies 16px padding, a 12px gap and an 8px radius; the existing Card had 12px padding and a 6px radius. Fixed both in `Card.tsx` and added `radius.r8` to the token scale. `--diff` now lists only the title's height, +5px, which is Figma trimming text boxes, not a defect.
+
+Possible applications:
+
+- Implementing a new component from a design handoff
+- Checking that an existing component still matches the design after a redesign
+- Finding values that were eyeballed or rounded instead of read from the design
+- Spotting gaps between the design's variables and the code's token scale
+- Saving Dev Mode MCP quota on teams that read a lot of frames
+
 ## Layout
 
 ```
