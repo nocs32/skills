@@ -125,3 +125,7 @@ ln -s "$(pwd)/<skill-name>" ~/.claude/skills/<skill-name>
 ```
 
 The skills here are generic and meant to be adapted to your own projects and conventions.
+
+## License
+
+[MIT](LICENSE)
