@@ -93,7 +93,9 @@ Ask only for `<thing>` when the user gave no branch names. Write the spec to the
    fix the spec or the split, rebuild; never a fix-up commit.
 5. **Publish.** Push every layer branch; open one PR per layer, each based on the branch below (the
    bottom on the trunk), body written from the commits — what the layer changes and why — with a
-   **Stack** line naming the PRs below and above. Then link them, every layer bottom to top:
+   **Stack** line naming the PRs below and above. When the repo has a PR template in `.github/`,
+   the body follows its shape and length. When the repo labels PRs, add a `--label` for each module
+   the layer touches. Then link them, every layer bottom to top:
 
    ```bash
    gh extension list | grep -q gh-stack || gh extension install github/gh-stack
