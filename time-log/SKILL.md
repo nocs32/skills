@@ -62,7 +62,7 @@ delete.
 
 ## Voice
 
-Short and deliberately unspecific. Name the **area** of work, not the implementation.
+Short and high-level. Name the **area** of work, not the implementation.
 
 Someone reading this is approving time, not reviewing code. They do not need file names, function
 names, library names, config values or ticket numbers. "Built the order summary and payment step."
